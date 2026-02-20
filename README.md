@@ -107,5 +107,4 @@ WebAppCertSicurezza/
 ├── Dockerfile
 └── README.md
 
-Licenza
-Nessuna licenza specificata. Tutti i diritti riservati all'Istituto Marconi di Rovereto.
+Tutti i diritti riservati all'Istituto Marconi di Rovereto.
