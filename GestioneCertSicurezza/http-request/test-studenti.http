@@ -1,0 +1,67 @@
+
+#     ==========================================================
+#       _____ _______ _    _ _____  ______ _   _ _______ _____ 
+#      / ____|__   __| |  | |  __ \|  ____| \ | |__   __|_   _|
+#     | (___    | |  | |  | | |  | | |__  |  \| |  | |    | |  
+#      \___ \   | |  | |  | | |  | |  __| | . ` |  | |    | |  
+#      ____) |  | |  | |__| | |__| | |____| |\  |  | |   _| |_ 
+#     |_____/   |_|   \____/|_____/|______|_| \_|  |_|  |_____|
+#
+#     ==========================================================
+
+
+### ====================================================================================================
+
+
+GET http://localhost/ws/studenti HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hcmlvLnJvc3NpIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTE1VDE2OjQyOjQ0LjIxMFoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0xNlQxNjo0Mjo0NC4yMTBaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNTMzNjk2NCwiZXhwIjoxNzA1MzM3ODY0fQ.vKAGmFkG4bSn00HOWxwP6V_f-jnBpfA40LGeDoTzpQs
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/studenti
+content-Type: application/json
+
+{
+    "codicefiscale": "CMPJCP05L16B354T",
+    "nome": "Jacopo", 
+    "cognome": "Comper",
+    "datanascita": "2005-07-16",
+    "sesso": "M"
+}
+
+
+### ====================================================================================================
+
+
+PUT http://localhost/ws/studenti/id/2 HTTP/1.1
+content-Type: application/json
+
+{
+    "codicefiscale": "CMPJCP05L16B354T",
+    "nome": "Jacopo", 
+    "cognome": "Comperao",
+    "datanascita": "2005-07-16",
+    "sesso": "M"
+}
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/studenti/id/1 HTTP/1.1
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/studenti/all HTTP/1.1
+content-Type: application/json
+
+{
+    "secret": "andtrent"
+}
+
+
+### ====================================================================================================

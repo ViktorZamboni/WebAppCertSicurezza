@@ -1,0 +1,47 @@
+
+#     =============================
+#               _____  _____  
+#         /\   |  __ \|  __ \ 
+#        /  \  | |__) | |__) |
+#       / /\ \ |  ___/|  ___/ 
+#      / ____ \| |    | |     
+#     /_/    \_\_|    |_|     
+#
+#     =============================
+
+
+### ====================================================================================================
+
+
+# Init
+POST https://gfs.andtrentini.it/ws/init HTTP/1.1
+Content-Type: application/json
+
+{
+    "secret": "root"
+}
+
+
+### ====================================================================================================
+
+
+# Login (admin)
+POST http://localhost/ws/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "root"
+}
+
+
+### ====================================================================================================
+
+
+# Richiesta di un nuovo Token
+POST http://localhost/ws/token HTTP/1.1
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJydW9sbyI6ImFkbWluIiwiaWF0IjoxNzA2NTU2MTc0LCJleHAiOjE3MDY1NTcwNzR9.19BGQSYZcI6bv1Re-4Kt854ViDhZmgd8FLzhNHUadB8"
+}

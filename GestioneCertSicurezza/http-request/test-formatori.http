@@ -1,0 +1,82 @@
+
+#     ==============================================================
+#      ______ ____  _____  __  __       _______ ____  _____  _____ 
+#     |  ____/ __ \|  __ \|  \/  |   /\|__   __/ __ \|  __ \|_   _|
+#     | |__ | |  | | |__) | \  / |  /  \  | | | |  | | |__) | | |  
+#     |  __|| |  | |  _  /| |\/| | / /\ \ | | | |  | |  _  /  | |  
+#     | |   | |__| | | \ \| |  | |/ ____ \| | | |__| | | \ \ _| |_ 
+#     |_|    \____/|_|  \_\_|  |_/_/    \_\_|  \____/|_|  \_\_____|
+#
+#     ==============================================================
+
+
+### ====================================================================================================
+
+
+GET http://localhost/ws/formatori HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/formatori HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+{
+    "nome": "Andrea",
+    "cognome": "Bianchi"
+}
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/formatori/array HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+[
+    {
+        "nome": "Andrea",
+        "cognome": "Trentini"
+    },
+    {
+        "nome": "Federico",
+        "cognome": "Bertolli"
+    }
+]
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/formatori/all HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+{
+    "secret": "andtrent"
+}
+
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/formatori/id/1 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+
+
+### ====================================================================================================
+
+
+PUT http://localhost/ws/formatori/id/1 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+Content-Type: application/json
+
+{
+    "nome": "Mario",
+    "cognome": "Rossi"
+}

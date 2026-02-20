@@ -1,0 +1,83 @@
+
+#     ================================================================================
+#               ____ _____ _      _____ _______        ___________ ____  _   _ _____ 
+#         /\   |  _ \_   _| |    |_   _|__   __|/\    |___  /_   _/ __ \| \ | |_   _|
+#        /  \  | |_) || | | |      | |    | |  /  \      / /  | || |  | |  \| | | |  
+#       / /\ \ |  _ < | | | |      | |    | | / /\ \    / /   | || |  | | . ` | | |  
+#      / ____ \| |_) || |_| |____ _| |_   | |/ ____ \  / /__ _| || |__| | |\  |_| |_ 
+#     /_/    \_\____/_____|______|_____|  |_/_/    \_\/_____|_____\____/|_| \_|_____|
+#
+#     ================================================================================
+
+
+### ====================================================================================================
+
+
+GET http://localhost/ws/abilitazioni HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjMyOjAxLjIxMVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDozMjowMS4yMTFaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4NzUyMSwiZXhwIjoxNzA2Mzg4NDIxfQ.3-Rk-Zn2ejmkWCwsxtNR8AA_Ik3V6Biecj6E8RmdT8o
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/abilitazioni HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjMyOjAxLjIxMVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDozMjowMS4yMTFaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4NzUyMSwiZXhwIjoxNzA2Mzg4NDIxfQ.3-Rk-Zn2ejmkWCwsxtNR8AA_Ik3V6Biecj6E8RmdT8o
+Content-Type: application/json
+
+{
+    "fkmodulo": 10,
+    "fkformatore": 2
+}
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/abilitazioni/array HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjMyOjAxLjIxMVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDozMjowMS4yMTFaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4NzUyMSwiZXhwIjoxNzA2Mzg4NDIxfQ.3-Rk-Zn2ejmkWCwsxtNR8AA_Ik3V6Biecj6E8RmdT8o
+Content-Type: application/json
+
+[
+    {
+        "fkmodulo": 10,
+        "fkformatore": 4
+    },
+    {
+        "fkmodulo": 10,
+        "fkformatore": 2
+    }
+]
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/abilitazioni/all HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjMyOjAxLjIxMVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDozMjowMS4yMTFaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4NzUyMSwiZXhwIjoxNzA2Mzg4NDIxfQ.3-Rk-Zn2ejmkWCwsxtNR8AA_Ik3V6Biecj6E8RmdT8o
+Content-Type: application/json
+
+{
+    "secret": "andtrent"
+}
+
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/abilitazioni/formatore-modulo/1/1 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjMyOjAxLjIxMVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDozMjowMS4yMTFaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4NzUyMSwiZXhwIjoxNzA2Mzg4NDIxfQ.3-Rk-Zn2ejmkWCwsxtNR8AA_Ik3V6Biecj6E8RmdT8o
+
+
+### ====================================================================================================
+
+
+PUT http://localhost/ws/abilitazioni/formatore-modulo/1/1 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjMyOjAxLjIxMVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDozMjowMS4yMTFaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4NzUyMSwiZXhwIjoxNzA2Mzg4NDIxfQ.3-Rk-Zn2ejmkWCwsxtNR8AA_Ik3V6Biecj6E8RmdT8o
+Content-Type: application/json
+
+{
+    "fkmodulo": 10,
+    "fkformatore": 2
+}
+

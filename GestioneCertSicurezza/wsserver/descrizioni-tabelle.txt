@@ -1,0 +1,36 @@
+
+App (init e login): funzioni "INIT" per inizializzare il database e "LOGIN" per autenticarsi ed ottenere un token e un refresh-token
+
+Abilitazioni
+
+AnniScolastici
+
+Classi
+
+ClassiStudenti
+
+Formatori
+
+FormazioniStudenti
+
+Logs
+
+Moduli
+
+PianiFormativi
+
+PianiFormativiModuli
+
+PianiFormativiStudenti
+
+ClassiStudenti
+
+Studenti
+
+Utenti
+
+===============================================================================================================================================
+
+Funzione Refresh (descrizione della funzione, non è una tabella): richiesta per ottenere un nuovo token dopo che quello in proprio possesso non sia più valido
+
+

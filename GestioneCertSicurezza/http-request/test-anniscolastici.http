@@ -1,0 +1,92 @@
+
+#     ==================================================================================================
+#               _   _ _   _ _____  _____  _____ ____  _                _____ _______ _____ _____ _____ 
+#         /\   | \ | | \ | |_   _|/ ____|/ ____/ __ \| |        /\    / ____|__   __|_   _/ ____|_   _|
+#        /  \  |  \| |  \| | | | | (___ | |   | |  | | |       /  \  | (___    | |    | || |      | |  
+#       / /\ \ | . ` | . ` | | |  \___ \| |   | |  | | |      / /\ \  \___ \   | |    | || |      | |  
+#      / ____ \| |\  | |\  |_| |_ ____) | |___| |__| | |____ / ____ \ ____) |  | |   _| || |____ _| |_ 
+#     /_/    \_\_| \_|_| \_|_____|_____/ \_____\____/|______/_/    \_\_____/   |_|  |_____\_____|_____|
+#
+#     ==================================================================================================
+
+
+### ====================================================================================================
+
+
+GET http://localhost/ws/anniscolastici HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/anniscolastici HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+{
+    "annoscolastico": "2023-24",
+    "annoinizio": 2023,
+    "annofine": 2024
+}
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/anniscolastici/array HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+[
+    {
+        "annoscolastico": "2021-22",
+        "annoinizio": 2021,
+        "annofine": 2022
+    },
+    {
+        "annoscolastico": "2022-23",
+        "annoinizio": 2022,
+        "annofine": 2023
+    },
+    {
+        "annoscolastico": "2019-20",
+        "annoinizio": 2019,
+        "annofine": 2020
+    }
+]
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/anniscolastici/all HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+{
+    "secret": "andtrent"
+}
+
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/anniscolastici/annoscolastico/2019-20 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+
+
+### ====================================================================================================
+
+
+PUT http://localhost/ws/anniscolastici/annoscolastico/2019-20 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+Content-Type: application/json
+
+{
+    "annoscolastico": "2019-20",
+    "annoinizio": 2040,
+    "annofine": 2050
+}
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sito helper</title>
+    <!--see https://favicon.io/-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/ws/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="ws/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/ws/assets/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="/ws/assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="manifest" href="/ws/assets/site.webmanifest" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+    <link rel="stylesheet" href="/ws/style.css" />
+    <script
+      src="https://kit.fontawesome.com/0f29c8e0e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="
+      https://cdn.jsdelivr.net/npm/@tsparticles/all@3.1.0/tsparticles.all.bundle.min.js
+    "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/intro.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0f29c8e0e0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body id="tsparticles" class="w-100 h-100">
+    <div
+      id="intro"
+      class="position-fixed d-flex flex-wrap align-items-center justify-content-center w-100 h-100 z-2 m-0"
+    >
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div
+          class="text-white d-flex flex-column align-items-center justify-content-center fw-bold h1"
+        >
+          <p
+            id="textToAnimate1"
+            class="overflow-hidden user-select-none w-0 typed"
+          >
+            Inizializzando il database. Attendi...
+          </p>
+        </div>
+        <div class="loader-container"></div>
+      </div>
+    </div>
+    <button
+      id="sidebarCollapseButton"
+      class="position-fixed top-0 start-0 btn text-white rounded-5 px-3 py-1 m-3"
+      onclick="toggleSidebar()"
+    >
+      <i class="fa-solid fa-caret-right" style="width: 18px"></i>
+    </button>
+    <div id="overlay-sidebar" class="position-fixed top-0 start-0 w-100 z-1">
+      <div
+        id="sidebar"
+        class="overflow-y-auto overflow-x-hidden d-flex flex-column flex-shrink-0 text-bg-dark vh-100"
+        style="width: 0px"
+      >
+        <button
+          id="sidebarCollapse"
+          class="btn text-white rounded-5 p-3 d-flex flex-wrap justify-content-center align-items-center"
+          onclick="toggleSidebar()"
+        >
+          <span class="fs-4 text-center">Helper</span>
+          <i class="fa-solid fa-caret-left ms-3"></i>
+        </button>
+        <hr class="m-0" />
+        <ul
+          id="sidebar-elements"
+          class="nav nav-pills flex-column mb-auto mt-3"
+        >
+          <li class="nav-link text-white active">App</li>
+          <li class="nav-link text-white">Abilitazioni</li>
+          <li class="nav-link text-white">Anni Scolastici</li>
+          <li class="nav-link text-white">Classi</li>
+          <li class="nav-link text-white">Classi Studenti</li>
+          <li class="nav-link text-white">Formatori</li>
+          <li class="nav-link text-white">Formazioni Studenti</li>
+          <li class="nav-link text-white">Logs</li>
+          <li class="nav-link text-white">Moduli</li>
+          <li class="nav-link text-white">Piani Formativi</li>
+          <li class="nav-link text-white">Piani Formativi Moduli</li>
+          <li class="nav-link text-white">Piani Formativi Studenti</li>
+          <li class="nav-link text-white">Studenti</li>
+          <li class="nav-link text-white">Utenti</li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="text-white d-flex flex-column w-100 align-items-center font-responsive justify-content-center fw-bold"
+      style="font-size: 4rem"
+    >
+      <p
+        id="titolo"
+        class="overflow-hidden border-right-0 user-select-none w-0 p-3"
+      >
+        Helper
+      </p>
+    </div>
+    <div class="container overflow-x-auto">
+      <table class="table rounded-3 w-100" id="tabella">
+        <thead class="thead-dark">
+          <tr>
+            <th
+              onclick="sort(0); applyEffect(0);"
+              class="text-center"
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+            >
+              URL<i class="fa-solid fa-sort"></i>
+            </th>
+            <th
+              onclick="sort(1); applyEffect(1);"
+              class="text-center"
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+            >
+              DESCRIZIONE<i class="fa-solid fa-sort"></i>
+            </th>
+            <th
+              onclick="sort(2); applyEffect(2);"
+              class="text-center"
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+            >
+              PARAMETRI<i class="fa-solid fa-sort"></i>
+            </th>
+            <th
+              onclick="sort(3); applyEffect(3);"
+              class="text-center"
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+            >
+              RICHIESTA<i class="fa-solid fa-sort"></i>
+            </th>
+            <th
+              onclick="sort(4); applyEffect(4);"
+              class="text-center"
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+            >
+              BODY<i class="fa-solid fa-sort"></i>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="container separator">
+      <h1 id="didascalia" class="text-center text-white p-5 user-select-none">
+        Rappresentazione di tutte le tabelle
+      </h1>
+      <img
+        id="rappresentazione-tabelle"
+        src="/ws/assets/tabelle.png"
+        alt="Immagine tabelle workbench"
+        class="img-fluid rounded-5 mx-auto d-block"
+      />
+    </div>
+
+    <div
+      id="descrizioni-tabelle"
+      class="container-fluid w-100 m-0 separator text-center user-select-none"
+    >
+      <div class="row row-cols-1 row-cols-md-3 text-white align-items-center">
+        <div class="col">
+          <h1>Formazioni Studenti</h1>
+          Tabella che contiene le informazioni riguardanti le formazioni tenute
+          da un Formatore riguardo ad un preciso Modulo per un singolo Studente.
+        </div>
+        <div class="col">
+          <h1>Studenti</h1>
+          Tabella che contiene le informazioni degli studenti.
+        </div>
+        <div class="col">
+          <h1>Moduli</h1>
+          Tabella che contiene le informazioni dei moduli utilizzati nei corsi
+          di sicurezza.
+        </div>
+        <div class="col">
+          <h1>Abilitazioni</h1>
+          Tabella che indica quali Formatori sono autorizzati a svolgere una
+          lezione di un determinato Modulo.
+        </div>
+        <div class="col">
+          <h1>Formatori</h1>
+          Tabella che contiene le informazioni dei formatori.
+        </div>
+        <div class="col">
+          <h1>Piani Formativi</h1>
+          Tabella che contiene le informazioni di un determinato corso di
+          formazione.
+        </div>
+        <div class="col">
+          <h1>Piani Formativi Moduli</h1>
+          Tabella che indica quali Moduli vengono utilizzati in un Piano
+          Formativo.
+        </div>
+        <div class="col">
+          <h1>Piani Formativi Studenti</h1>
+          Tabella che indica quali Studenti partecipano o hanno partecipato a
+          quali Piani Formativi.
+        </div>
+        <div class="col">
+          <h1>Classi Studenti</h1>
+          Tabella che associa gli Studenti ad una determinata Classe in uno
+          specifico Anno Scolastico.
+        </div>
+        <div class="col">
+          <h1>Anni Scolastici</h1>
+          Tabella che contiene l’elenco degli anni scolastici.
+        </div>
+        <div class="col">
+          <h1>Classi</h1>
+          Tabella che contiene le informazioni riguardanti una singola classe.
+        </div>
+        <div class="col">
+          <h1>Utenti</h1>
+          Tabella contenente le informazioni degli utenti autorizzati ad operare
+          sui dati.
+        </div>
+      </div>
+      <div
+        class="row row-cols-1 row-cols-md-3 justify-content-center text-white align-items-center"
+      >
+        <div class="col">
+          <h1>Logs</h1>
+          Tabella contenente i logs delle operazioni effettuate, ognuna con una
+          descrizione e la data in cui è stata effettuata.
+        </div>
+      </div>
+    </div>
+    <div
+      id="cursor"
+      class="position-fixed w-100 h-100 d-block rounded-0 top-0 left-0 pe-none"
+    ></div>
+    <script src="/ws/scripts/cursor.js"></script>
+    <script src="/ws/scripts/particles.js"></script>
+    <script src="/ws/scripts/richieste.js"></script>
+    <script src="/ws/scripts/style.js"></script>
+    <script src="/ws/scripts/intro.js"></script>
+    <script src="/ws/scripts/init.js"></script>
+  </body>
+</html>

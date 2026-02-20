@@ -1,0 +1,63 @@
+
+#     =============================
+#      _      ____   _____  _____ 
+#     | |    / __ \ / ____|/ ____|
+#     | |   | |  | | |  __| (___  
+#     | |   | |  | | | |_ |\___ \ 
+#     | |___| |__| | |__| |____) |
+#     |______\____/ \_____|_____/ 
+#
+#     =============================
+
+
+### ====================================================================================================
+
+
+GET http://localhost/ws/logs HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+
+
+### ====================================================================================================
+
+
+POST http://localhost/ws/logs HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+{
+    "datetime": "2024-01-27T20:47:16",
+    "descrizione": "Test"
+}
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/logs/all HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjQ3OjE2LjkxNVoiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo0NzoxNi45MTVaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODQzNiwiZXhwIjoxNzA2Mzg5MzM2fQ.vwHUBqb5XlPx7eVSqcEi-TitwBFB7gu2heUQ7qc06Ec
+Content-Type: application/json
+
+{
+    "secret": "andtrent"
+}
+
+
+
+### ====================================================================================================
+
+
+DELETE http://localhost/ws/logs/id/1 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+
+
+### ====================================================================================================
+
+
+PUT http://localhost/ws/logs/id/1 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZGF0YV9jcmVhemlvbmUiOiIyMDI0LTAxLTI3VDIwOjUyOjAyLjY2N1oiLCJkYXRhX3NjYWRlbnphIjoiMjAyNC0wMS0yOFQyMDo1MjowMi42NjdaIiwicnVvbG8iOiJhZG1pbiIsImlhdCI6MTcwNjM4ODcyMiwiZXhwIjoxNzA2Mzg5NjIyfQ.-buZ7QHjLD9Kw5hw7scuVc6dCFSgGzjuUSSlBPFTbLE
+Content-Type: application/json
+
+{
+    "datetime": "2024-01-27T20:47:16",
+    "descrizione": "Modifica a Test"
+}
