@@ -89,22 +89,4 @@ Email: impostare i parametri SMTP nel file config/email.json.
 
 Database: il file SQLite certificati.db viene creato automaticamente all'avvio. Per reset, eliminare il file e riavviare.
 
-## Struttura del progetto
-WebAppCertSicurezza/
-├── public/               # File statici (HTML, CSS, JS client)
-│   ├── index.html
-│   ├── css/
-│   ├── js/
-│   └── assets/
-├── routes/               # Route Express
-├── controllers/          # Logica di business
-├── models/               # Modelli dati e interazioni DB
-├── views/                # Template (se utilizzati)
-├── uploads/              # File caricati (certificati)
-├── config/               # File di configurazione
-├── server.js             # Entry point
-├── package.json
-├── Dockerfile
-└── README.md
-
 Tutti i diritti riservati all'Istituto Marconi di Rovereto.
