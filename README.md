@@ -39,7 +39,7 @@ Docker (opzionale, per esecuzione containerizzata).
 
 Porta 8080 libera (configurabile).
 
-Installazione ed esecuzione
+## Installazione ed esecuzione
 Modalità tradizionale (senza Docker)
 Clonare il repository:
 
@@ -71,7 +71,7 @@ bash
 docker run -p 8080:8080 webappcertsicurezza
 Accedere a http://localhost:8080.
 
-Utilizzo
+## Utilizzo
 Accesso: utilizzare le credenziali fornite dall'amministratore (default: admin/admin da modificare al primo accesso).
 
 Navigazione: menu laterale con sezioni: Dashboard, Anagrafica, Certificati, Report, Impostazioni.
@@ -89,8 +89,7 @@ Email: impostare i parametri SMTP nel file config/email.json.
 
 Database: il file SQLite certificati.db viene creato automaticamente all'avvio. Per reset, eliminare il file e riavviare.
 
-Struttura del progetto
-text
+## Struttura del progetto
 WebAppCertSicurezza/
 ├── public/               # File statici (HTML, CSS, JS client)
 │   ├── index.html
@@ -107,8 +106,6 @@ WebAppCertSicurezza/
 ├── package.json
 ├── Dockerfile
 └── README.md
-Contributi
-Il progetto è sviluppato e mantenuto da Viktor Zamboni. Per segnalare problemi o proporre migliorie, aprire una issue o inviare una pull request su GitHub.
 
 Licenza
 Nessuna licenza specificata. Tutti i diritti riservati all'Istituto Marconi di Rovereto.
